@@ -53,6 +53,8 @@ jobs:
         with: 
           path: ~/.npm
           key: node-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependecies 
+        run: npm ci 
       - name: Build application
         run: npm run build
       - name: Deploy
